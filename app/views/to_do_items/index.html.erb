@@ -1,0 +1,31 @@
+<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+<div id="display">
+  <p id="notice"><%= notice %></p>
+
+  <h1>To Do Items</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @to_do_items.each do |to_do_item, n| %>
+        <tr>
+          <td><%= n %>
+          <td><%= to_do_item.description %></td>
+          <td><%= link_to 'Edit', edit_to_do_item_path(to_do_item) %></td>
+          <td><%= link_to 'Destroy', to_do_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <%  %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to '+ New To Do Item', new_to_do_item_path %>
+</div>
